@@ -1,0 +1,284 @@
+[
+  {
+    "architecture": "conventional",
+    "case": "conventional_unoptimized",
+    "hardware": {
+      "architecture": "conventional",
+      "clock_hz": 1000000000.0,
+      "compute_setup_cycles": 4,
+      "dma_bytes_per_cycle": 32,
+      "dma_setup_cycles": 8,
+      "elements_per_cycle": 16,
+      "macs_per_cycle": 64,
+      "pim_bytes_per_cycle": 128,
+      "pim_macs_per_cycle": 64,
+      "sram_bytes": 65536,
+      "tile_k": 16,
+      "tile_m": 16,
+      "tile_n": 16
+    },
+    "metrics": {
+      "bottleneck": "memory port",
+      "compute_busy": 308,
+      "compute_utilization": 0.3893805309734513,
+      "cycles": 791,
+      "dma_busy": 483,
+      "dma_utilization": 0.6106194690265486,
+      "dram_busy": 483,
+      "dram_read_bytes": 8800,
+      "dram_utilization": 0.6106194690265486,
+      "dram_write_bytes": 3072,
+      "latency_ns": 791.0,
+      "offchip_bytes": 11872,
+      "offchip_read_bytes": 8800,
+      "peak_sram_bytes": 4096,
+      "per_operation": {
+        "op0_dense": {
+          "busy_cycles": 651,
+          "end": 651,
+          "start": 0
+        },
+        "op1_Relu": {
+          "busy_cycles": 140,
+          "end": 791,
+          "start": 651
+        }
+      },
+      "pim_busy": 0,
+      "pim_local_read_bytes": 0,
+      "pim_utilization": 0.0
+    },
+    "model": "demo_gemm_relu.onnx",
+    "model_dimensions": [
+      16,
+      32,
+      24
+    ],
+    "seed": 11,
+    "transformations": {
+      "dead_operations_removed": 0,
+      "enabled": false,
+      "final_operations": 2,
+      "fusion_patterns": 0,
+      "original_operations": 2
+    },
+    "verification": {
+      "atol": 1e-05,
+      "max_absolute_error": {
+        "activated": 1.1920928955078125e-07
+      },
+      "passed": true,
+      "rtol": 0.0001,
+      "seed": 7
+    }
+  },
+  {
+    "architecture": "conventional",
+    "case": "conventional_fused",
+    "hardware": {
+      "architecture": "conventional",
+      "clock_hz": 1000000000.0,
+      "compute_setup_cycles": 4,
+      "dma_bytes_per_cycle": 32,
+      "dma_setup_cycles": 8,
+      "elements_per_cycle": 16,
+      "macs_per_cycle": 64,
+      "pim_bytes_per_cycle": 128,
+      "pim_macs_per_cycle": 64,
+      "sram_bytes": 65536,
+      "tile_k": 16,
+      "tile_m": 16,
+      "tile_n": 16
+    },
+    "metrics": {
+      "bottleneck": "memory port",
+      "compute_busy": 304,
+      "compute_utilization": 0.45037037037037037,
+      "cycles": 675,
+      "dma_busy": 371,
+      "dma_utilization": 0.5496296296296296,
+      "dram_busy": 371,
+      "dram_read_bytes": 7264,
+      "dram_utilization": 0.5496296296296296,
+      "dram_write_bytes": 1536,
+      "latency_ns": 675.0,
+      "offchip_bytes": 8800,
+      "offchip_read_bytes": 7264,
+      "peak_sram_bytes": 4096,
+      "per_operation": {
+        "op0_dense_fused": {
+          "busy_cycles": 675,
+          "end": 675,
+          "start": 0
+        }
+      },
+      "pim_busy": 0,
+      "pim_local_read_bytes": 0,
+      "pim_utilization": 0.0
+    },
+    "model": "demo_gemm_relu.onnx",
+    "model_dimensions": [
+      16,
+      32,
+      24
+    ],
+    "seed": 11,
+    "transformations": {
+      "dead_operations_removed": 0,
+      "enabled": true,
+      "final_operations": 1,
+      "fusion_patterns": 1,
+      "original_operations": 2
+    },
+    "verification": {
+      "atol": 1e-05,
+      "max_absolute_error": {
+        "activated": 1.1920928955078125e-07
+      },
+      "passed": true,
+      "rtol": 0.0001,
+      "seed": 7
+    }
+  },
+  {
+    "architecture": "pim",
+    "case": "pim_unoptimized",
+    "hardware": {
+      "architecture": "pim",
+      "clock_hz": 1000000000.0,
+      "compute_setup_cycles": 4,
+      "dma_bytes_per_cycle": 32,
+      "dma_setup_cycles": 8,
+      "elements_per_cycle": 16,
+      "macs_per_cycle": 64,
+      "pim_bytes_per_cycle": 128,
+      "pim_macs_per_cycle": 64,
+      "sram_bytes": 65536,
+      "tile_k": 16,
+      "tile_m": 16,
+      "tile_n": 16
+    },
+    "metrics": {
+      "bottleneck": "memory port",
+      "compute_busy": 28,
+      "compute_utilization": 0.040756914119359534,
+      "cycles": 687,
+      "dma_busy": 355,
+      "dma_utilization": 0.5167394468704513,
+      "dram_busy": 659,
+      "dram_read_bytes": 8800,
+      "dram_utilization": 0.9592430858806404,
+      "dram_write_bytes": 3072,
+      "latency_ns": 687.0,
+      "offchip_bytes": 8800,
+      "offchip_read_bytes": 5728,
+      "peak_sram_bytes": 3072,
+      "per_operation": {
+        "op0_dense": {
+          "busy_cycles": 547,
+          "end": 547,
+          "start": 0
+        },
+        "op1_Relu": {
+          "busy_cycles": 140,
+          "end": 687,
+          "start": 547
+        }
+      },
+      "pim_busy": 304,
+      "pim_local_read_bytes": 3072,
+      "pim_utilization": 0.44250363901018924
+    },
+    "model": "demo_gemm_relu.onnx",
+    "model_dimensions": [
+      16,
+      32,
+      24
+    ],
+    "seed": 11,
+    "transformations": {
+      "dead_operations_removed": 0,
+      "enabled": false,
+      "final_operations": 2,
+      "fusion_patterns": 0,
+      "original_operations": 2
+    },
+    "verification": {
+      "atol": 1e-05,
+      "max_absolute_error": {
+        "activated": 1.1920928955078125e-07
+      },
+      "passed": true,
+      "rtol": 0.0001,
+      "seed": 7
+    }
+  },
+  {
+    "architecture": "pim",
+    "case": "pim_fused",
+    "hardware": {
+      "architecture": "pim",
+      "clock_hz": 1000000000.0,
+      "compute_setup_cycles": 4,
+      "dma_bytes_per_cycle": 32,
+      "dma_setup_cycles": 8,
+      "elements_per_cycle": 16,
+      "macs_per_cycle": 64,
+      "pim_bytes_per_cycle": 128,
+      "pim_macs_per_cycle": 64,
+      "sram_bytes": 65536,
+      "tile_k": 16,
+      "tile_m": 16,
+      "tile_n": 16
+    },
+    "metrics": {
+      "bottleneck": "memory port",
+      "compute_busy": 0,
+      "compute_utilization": 0.0,
+      "cycles": 571,
+      "dma_busy": 243,
+      "dma_utilization": 0.425569176882662,
+      "dram_busy": 571,
+      "dram_read_bytes": 7264,
+      "dram_utilization": 1.0,
+      "dram_write_bytes": 1536,
+      "latency_ns": 571.0,
+      "offchip_bytes": 5728,
+      "offchip_read_bytes": 4192,
+      "peak_sram_bytes": 3072,
+      "per_operation": {
+        "op0_dense_fused": {
+          "busy_cycles": 571,
+          "end": 571,
+          "start": 0
+        }
+      },
+      "pim_busy": 328,
+      "pim_local_read_bytes": 3072,
+      "pim_utilization": 0.574430823117338
+    },
+    "model": "demo_gemm_relu.onnx",
+    "model_dimensions": [
+      16,
+      32,
+      24
+    ],
+    "seed": 11,
+    "transformations": {
+      "dead_operations_removed": 0,
+      "enabled": true,
+      "final_operations": 1,
+      "fusion_patterns": 1,
+      "original_operations": 2
+    },
+    "verification": {
+      "atol": 1e-05,
+      "max_absolute_error": {
+        "activated": 1.1920928955078125e-07
+      },
+      "passed": true,
+      "rtol": 0.0001,
+      "seed": 7
+    }
+  }
+]

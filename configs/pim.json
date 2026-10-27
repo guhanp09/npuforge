@@ -1,0 +1,15 @@
+{
+  "architecture": "pim",
+  "sram_bytes": 65536,
+  "macs_per_cycle": 64,
+  "elements_per_cycle": 16,
+  "dma_bytes_per_cycle": 32,
+  "dma_setup_cycles": 8,
+  "compute_setup_cycles": 4,
+  "pim_macs_per_cycle": 64,
+  "pim_bytes_per_cycle": 128,
+  "clock_hz": 1000000000,
+  "tile_m": 16,
+  "tile_n": 16,
+  "tile_k": 16
+}

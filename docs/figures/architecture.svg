@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" role="img" aria-label="NPUForge compiler and simulator architecture">
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#75829b"/></marker></defs>
+<rect width="1200" height="340" rx="20" fill="#f0f3f9"/>
+<g font-family="system-ui,sans-serif" fill="#24334d">
+<text x="32" y="40" font-size="13" letter-spacing="2" fill="#6c52b7">NPUFORGE / COMPILER TO HARDWARE</text>
+<g stroke="#d3daea" fill="white">
+<rect x="30" y="75" width="160" height="100" rx="12"/>
+<rect x="225" y="75" width="160" height="100" rx="12"/>
+<rect x="420" y="75" width="160" height="100" rx="12"/>
+<rect x="615" y="75" width="160" height="100" rx="12"/>
+<rect x="810" y="75" width="160" height="100" rx="12"/>
+<rect x="1005" y="75" width="165" height="100" rx="12" fill="#eee8fa"/>
+</g>
+<g font-size="17" font-weight="650" text-anchor="middle">
+<text x="110" y="112">ONNX</text><text x="305" y="112">Tensor IR</text>
+<text x="500" y="112">Optimize</text><text x="695" y="112">Tile &amp; lower</text>
+<text x="890" y="112">Instruction DAG</text><text x="1087" y="112">C++ simulator</text>
+</g>
+<g font-size="12" text-anchor="middle" fill="#62718a">
+<text x="110" y="140">Check + infer shapes</text><text x="305" y="140">Types + dependencies</text>
+<text x="500" y="140">Dead code + fusion</text><text x="695" y="140">SRAM + data movement</text>
+<text x="890" y="140">DMA / compute / PIM</text><text x="1087" y="140">Events + contention</text>
+</g>
+<g stroke="#75829b" fill="none" marker-end="url(#a)">
+<path d="M190 125H219"/><path d="M385 125H414"/><path d="M580 125H609"/>
+<path d="M775 125H804"/><path d="M970 125H999"/>
+<path d="M305 175V210H270V230"/><path d="M1087 175V230"/>
+<path d="M510 270H609"/>
+</g>
+<rect x="30" y="235" width="480" height="75" rx="12" fill="#e5f3ed" stroke="#cce5da"/>
+<text x="54" y="264" font-size="15" font-weight="650">Independent correctness</text>
+<text x="54" y="287" font-size="13" fill="#4b7365">NumPy FP32 semantics ↔ ONNX Runtime reference</text>
+<rect x="615" y="235" width="555" height="75" rx="12" fill="white" stroke="#d3daea"/>
+<text x="639" y="264" font-size="15" font-weight="650">Reproducible evidence</text>
+<text x="639" y="287" font-size="13" fill="#62718a">Cycles · bytes · utilization · traces · benchmarks · local HTML</text>
+</g></svg>

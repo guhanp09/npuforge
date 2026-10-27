@@ -1,0 +1,37 @@
+[build-system]
+requires = ["scikit-build-core>=0.10,<1", "pybind11>=2.13,<4"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "npuforge"
+version = "0.3.0"
+description = "A static ONNX compiler and native abstract NPU performance simulator"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = ["numpy>=1.26,<3", "onnx>=1.16,<2", "onnxruntime>=1.31,<2"]
+
+[project.urls]
+Repository = "https://github.com/guhanp09/npuforge"
+Issues = "https://github.com/guhanp09/npuforge/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.9,<1", "clang-format>=18,<24", "build>=1.2,<2",
+       "cmake>=3.18,<5", "ninja>=1.11,<2"]
+
+[project.scripts]
+npuforge = "npuforge.cli:main"
+
+[tool.scikit-build]
+wheel.packages = ["src/npuforge"]
+cmake.build-type = "Release"
+sdist.exclude = ["**/__pycache__/**", "**/*.pyc"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
